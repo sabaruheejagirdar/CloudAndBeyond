@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+
+    <h2> Coordinates of Dallas- 32.7998107, -96.8015998</h2>
+
+    <section>   
+        <form action="/largestQuakeDallas" method="post">
+        <input type="text" placeholder="Enter Latitue" name="latitude" value="32.7998107">
+        <input type="text" placeholder="Enter Longitude" name="longitude" value="-96.8015998">
+        <input type="text" placeholder="Enter Radius in KM" name="radius" value="200">
+        <input type="submit" name="Submit">
+    </form>
+    </section>
+
+    <!-- COMMON -->
+
+    
+
+    {% if onSuccess %}
+    <h3> Largest Earthquake at Dallas happened at a distance of- {{largestDallasQuake[5]}}</h3>
+    <p>Latitude: {{largestDallasQuake[0]}}</p>
+    <p>Longitude: {{largestDallasQuake[1]}}</p>
+    <p>Type: {{largestDallasQuake[2]}}</p>
+    <p>Place: {{largestDallasQuake[3]}}</p>
+    <p>ID: {{largestDallasQuake[4]}}</p>
+    <p>Distance: {{largestDallasQuake[5]}}</p>
+
+    {% if allRecords %}
+    <table>
+        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>DISTANCE</th>
+            <th>Type</th>
+            <th>Place</th>
+            <th>ID</th>
+        </tr>
+        {% for perEntry in allRecords %}
+        <tr>
+            <td>{{perEntry['latitude']}}</td>
+            <td>{{perEntry['longitude']}}</td>
+            <td>{{perEntry['distance']}}</td>
+            <td>{{perEntry['type']}}</td>
+            <td>{{perEntry['place']}}</td>
+            <td>{{perEntry['id']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    {% endif %}
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %} 
+    </body>
+</html>

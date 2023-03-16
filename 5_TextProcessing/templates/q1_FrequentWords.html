@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Q1- FrequentWords</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br> 
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+
+    <p><i>Based on given value(N) in a file find most FREQUENT occuring word / total count</i></p>
+
+    <form action="/on_q1_FrequentWords" method="post">
+        <input type="text" placeholder="Enter the frequent number" name="frequentNum">
+        <input type="submit" name="Submit"> <br>
+        2
+    </form>
+    <div><i>burro appears 2 out of 6</i></div>
+    
+
+    {% if onSuccess %}
+        {% for key, value in finalDict.items() %}
+            {% if value is string %}
+                <p>{{ key }} appears '{{ value }}' out of {{totalwords}}</p>
+            {% else %}
+                <p>{{ key }} appears {{ value }} out of {{totalwords}}</p>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>

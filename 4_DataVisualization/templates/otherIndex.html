@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <script src="{{ url_for('static', filename='myScript.js')}}"></script>
+    <title>Project-04</title>
+</head>
+<body class="homePage">
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+    
+    <section>
+
+        <h2>Quiz- 04</h2>
+        <section>
+            <h3>Q01- Total Count, ALphabet, Numbers, Spaces, Punc </h3>
+            <p><a href="/q21_mockQuiz" target="_blank">Click here!!!</a></p>
+        </section>
+        <section>
+            <h3>Q03A- For the data set p, please show a point chart (scatter chart, x/y chart) that occupies about half (50%) of the screen width 
+                and height with labels on each axis, where each point has the color "r" (red) or "g" (green). </h3>
+            <p><a href="/q22_scatter" target="_blank">Click here!!!</a></p>
+        </section>
+        <section>
+            <h3>11A- For the data set f a user will select a range of stores (for example stores 2 to 4) and you will display 
+                a vertical bar chart where each bar represents the the total amount of that food (based on the num) in all stores,
+                (for this example there are 8 berrys, 2 pears, 6 grapes (2+4), 3 kiwi, 1 apple. So the 8 berry should be 8 times longer
+                than the 1 apple.)
+                The bars should be blue, the anotation (legend) are below each bar, the chart should occupy between 70 to 90% 
+                of the screen width.</h3>
+            <p><a href="/q23_vertical" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <h2>Assignment-04</h2>
+
+        <section>
+            <h3>Q05- Letter portion </h3>
+            <p><a href="/q11_mockQuiz" target="_blank">Click here!!!</a></p>
+        </section>
+    
+        <section>
+            <h3>Q0- Display all records</h3>
+            <p><a href="/displayAllRecords2" target="_blank">Click here!!!</a></p>
+        </section>
+        
+        <section>
+            <h3>Q01-  From the quake dataset, show the number of quakes for magnitude below 1, 1 to 2,
+                2 to 3, up to magnitude 5. 
+               </h3>
+            <p><a href="/q01_A4_magPie" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h3>Q02- Repeat above with bar chart(Vertical - Column)
+               </h3>
+            <p><a href="/q02_A4_magBar" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h3>Q03- What would a graph of magnitude against depth for the 100 recent quakes look like? </h3>
+            <p><a href="/q03_A4_scatterMagDepth" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <h2> Mock quiz and quiz 3   </h2>
+        <section>
+            <h3>Q04- We will give you a range (for example 1 to 3), for attribute (column) T, show a pie chart which occupies at least 75% 
+                of the screen width, with values inside each pie slice, where each slice is proportional to the number of occurances 
+                of that value (for the example, there are three 1's, one 2, and six 3's, so the 3's slice should occupy 6/10 of the pie.) </h3>
+            <p><a href="/q04_A4_pie" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h3>Q05- Divide based on ranges </h3>
+            <p><a href="/q05_A4_pie" target="_blank">Click here!!!</a></p>
+        </section>
+
+        
+     <section>
+        <h3>Q06- Quiz3 Bonus- We will give you a range of nst values (similar to 10.a), please show a horizontal bar chart
+            that occupies 80 % of the screen width, with green bars, where each bar size is the number of tuples with
+            that value. Please put labels outside the bars.</h3>
+        <p><a href="/q06_A4_bar" target="_blank">Click here!!!</a></p>
+    </section>
+
+    <h3>PREV</h3>
+    <section>
+        <h3>Q07- For this question (only this question), 
+            Using a web interface (web page) allow a user to give a number N, and show a pie chart with N slices, 
+            where each pie slice represents 1/N th of the number of entries in the coresponding range in column 3 
+            (the last column)</h3>
+        <p><a href="/q07_A4_pie" target="_blank">Click here!!!</a></p>
+    </section>
+
+    <section>
+        <h3>Q08- Using a web interface (web page) allow a user to give a number N, and the names of N fruits,
+            for example for N=2, "grape" and "figs", show a pie chart with N slices, 
+            where each pie slice represents the fraction of grapes and figs from that group, in this case there are 2 grapes and 4 figs,
+            so 66% should be figs and 33% grapes.</h3>
+        <p><a href="/q08_fruitsPie" target="_blank">Click here!!!</a></p>
+    </section>
+
+    <section>
+        <h3>Q09- Column chart with above.</h3>
+        <p><a href="/q09_fruitsColumn" target="_blank">Click here!!!</a></p>
+    </section>
+    
+    
+    
+    
+        <!-- <section>
+            <h3>Q1- Here goes the question!!!!</h3>
+            <p><a href="/thisWillRouteToTheApp_pyFile" target="_blank">Click here!!!</a></p>
+        </section> -->
+    
+        <!-- <form action="/onSubmission" method="post">
+            <input type="text" placeholder="Enter the Name to Search" name="nameUsedIn_Py">
+            <input type="submit" name="Submit">
+        </form> -->
+        <!-- 
+
+        {% if onSuccess %}
+            {{ onSuccess }}
+        {% endif %}
+
+        {% if onFailure %}
+            {{ onFailure }}
+        {% endif %}
+
+        {% if onSuccess %}
+            <h3>
+                    Total records:  {{ onSuccess }}
+            </h3>
+
+            {% if allRecords %}
+                <table>
+                    <tr>
+                        <th>Time</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Magnitude</th>
+                        <th>Place</th>
+                        <th>ID</th>
+                    </tr>
+                    {% for perEntry in allRecords %}
+                    <tr>
+                        <td>{{perEntry['time']}}</td>
+                        <td>{{perEntry['latitude']}}</td>
+                        <td>{{perEntry['longitude']}}</td>
+                        <td>{{perEntry['mag']}}</td>
+                        <td>{{perEntry['place']}}</td>
+                        <td>{{perEntry['id']}}</td>
+                        <td><img src="{{perEntry['picture']}}" alt="Not Found" width="80" height="80"></td>
+                        <td>{{perEntry['picture']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+    {% endif %}
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+
+    -->
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project-01</title>
+</head>
+<body class="homePage">
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON -->
+    
+    <section>
+    
+        <h1>Project-01</h1>
+    
+        <section>
+            <h2>Q0- Display All Tables from DB!!!!</h2>
+            <p><a href="/displayAllRecords" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q5- Update the Salary</h2>
+            <p><a href="/updateSalary" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q1- Search for Tanzima (Name) and show her picture on a web page.</h2>
+            <p><a href="/searchName" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q2- Display Pictures salary less than 99000</h2>
+            <p><a href="/salaryLessPic" target="_blank">Click here!!!</a></p>
+        </section> 
+
+        <!-- <section>
+            <h2>Q2- Add picture</h2>
+            <p><a href="/addPic" target="_blank">Click here!!!</a></p>
+        </section>
+     -->
+     <section>
+        <h2>Q4- Remove Record</h2>
+        <p><a href="/removeRec" target="_blank">Click here!!!</a></p>
+    </section> 
+
+    <section>
+        <h2>Q5- Update the Keyword</h2>
+        <p><a href="/updateKeyword" target="_blank">Click here!!!</a></p>
+    </section>
+    
+    
+        <!-- <section>
+            <h2>Q1- Here goes the question!!!!</h2>
+            <p><a href="/thisWillRouteToTheApp_pyFile" target="_blank">Click here!!!</a></p>
+        </section> -->
+    
+        <!-- <form action="/onSubmission" method="post">
+            <input type="text" placeholder="Enter the Name to Search" name="nameUsedIn_Py">
+            <input type="submit" name="Submit">
+        </form> -->
+        <!-- 
+        {% if rangeList %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Class</th>
+                    <th>Comments</th>
+                    <th>Picture</th>
+                </tr>
+                {% for perEntry in rangeList %}
+                <tr>
+                    <td>{{perEntry['name']}}</td>
+                    <td>{{perEntry['age']}}</td>
+                    <td>{{perEntry['class']}}</td>
+                    <td>{{perEntry['comments']}}</td>
+                    <td><img src="static/{{perEntry['picture']}}" alt="picture"></td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        {% if error %}
+            {{ error }}
+        {% endif %} 
+    -->
+
+    </section>
+</body>
+</html>

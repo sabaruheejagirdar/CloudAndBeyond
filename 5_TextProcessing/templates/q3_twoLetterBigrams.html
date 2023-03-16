@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Q3- Two Letter Bigrams</title>
+</head>
+<body >
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+    <h3><i>Count the 2 letter bi-grams</i></h3>
+    <form action="/on_q3_twoLetterBigrams" method="post">
+        <input type="text" placeholder="Enter the valueN" name="nCount">
+        <input type="submit" name="Submit">
+    </form>
+
+    {% if onFailure %}
+        <h2>{{onFailure}}</h2>
+    {% endif %}
+
+    {% if onSuccess %}
+        <h2>{{onSuccess}}</h2>
+        <table>
+            <tr>
+                <th>
+                    Occurences
+                </th>
+                <th>
+                    Count
+                </th>
+            </tr>
+            {% for key, value in a1.items() %}
+            <tr>
+                <td> {{ key }} </td>
+                <td> {{ value }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+
+
+    </body>
+</html>

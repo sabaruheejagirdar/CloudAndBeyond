@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+
+    <section>   
+        <form action="/imageUploaded" method="post">
+        <input type="text" placeholder="Upload profile picture" name="image">
+        <input type="submit" name="Submit">
+    </form>
+    </section>
+    
+
+    {% if onSuccess %}
+        <p>
+            {{ onSuccess }}
+        </p>
+        {% if allRecords %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Class</th>
+                <th>Picture</th>
+                <th>Comments</th>
+            </tr>
+            {% for perEntry in allRecords %}
+            <tr>
+                <td>{{perEntry['name']}}</td>
+                <td>{{perEntry['age']}}</td>
+                <td>{{perEntry['class']}}</td>
+                <td><img src="{{perEntry['picture']}}" alt="Not Found" width="80" height="80"></td>
+                <!-- <td>{{perEntry['picture']}}</td> -->
+                <td>{{perEntry['comments']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    {% endif %}
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+
+</body>
+</html>

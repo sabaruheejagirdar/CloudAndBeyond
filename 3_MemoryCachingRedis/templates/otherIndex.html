@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body  style="background-color: pink;" class="homePage">
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+    
+    <section>
+    
+        <h1>Quiz-01</h1>
+    
+        <section>
+            <h2>Q00- Display all records</h2>
+            <p><a href="/displayAllRecords2" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q01- On a web form, we will give you a range of numbers (for example 26 to 400) and a number N (for example 4), please retrieve 
+                (select) N of those tuples (at random, or the first N, either OK) within that range 5 times, show the the results of that
+                query, and the time taken to do EACH query. </h2>
+            <p><a href="/q01_withoutRedisEachQuery" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q02- Above Query with REDIS </h2>
+            <p><a href="/q02_withRedisEachQuery" target="_blank">Click here!!!</a></p>
+        </section>
+
+          
+    
+    
+    
+        <!-- <section>
+            <h2>Q1- Here goes the question!!!!</h2>
+            <p><a href="/thisWillRouteToTheApp_pyFile" target="_blank">Click here!!!</a></p>
+        </section> -->
+    
+        <!-- <form action="/onSubmission" method="post">
+            <input type="text" placeholder="Enter the Name to Search" name="nameUsedIn_Py">
+            <input type="submit" name="Submit">
+        </form> -->
+        <!-- 
+
+        {% if onSuccess %}
+            {{ onSuccess }}
+        {% endif %}
+
+        {% if onFailure %}
+            {{ onFailure }}
+        {% endif %}
+
+        {% if onSuccess %}
+            <h3>
+                    Total records:  {{ onSuccess }}
+            </h3>
+
+            {% if allRecords %}
+                <table>
+                    <tr>
+                        <th>Time</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Magnitude</th>
+                        <th>Place</th>
+                        <th>ID</th>
+                    </tr>
+                    {% for perEntry in allRecords %}
+                    <tr>
+                        <td>{{perEntry['time']}}</td>
+                        <td>{{perEntry['latitude']}}</td>
+                        <td>{{perEntry['longitude']}}</td>
+                        <td>{{perEntry['mag']}}</td>
+                        <td>{{perEntry['place']}}</td>
+                        <td>{{perEntry['id']}}</td>
+                        <td><img src="{{perEntry['picture']}}" alt="Not Found" width="80" height="80"></td>
+                        <td>{{perEntry['picture']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+    {% endif %}
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+
+    -->
+
+    </section>
+</body>
+</html>

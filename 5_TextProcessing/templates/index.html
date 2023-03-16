@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project-05</title>
+</head>
+<body class="homePage">
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+    
+    <section>
+    
+        <p>Assignment- 05(11)</p>
+        <section>
+            <h2>Q1- Single word search in the documents. <br> Display File Name, Line Number(s), Total number of times found in that file</h2>
+            <p><a href="/q11_singleWordSearch" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <p>PREVIOUS(1)</p>
+        <section>
+            <h2>Q1- Based on given value(N) in a file find most FREQUENT occuring word / total count</h2>
+            <p><a href="/q1_FrequentWords" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q2- Count the number of stop words in the text</h2>
+            <p><a href="/q2_stopWordsMatch" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q3- Count the 2 letter bi-grams</h2>
+            <p><a href="/q3_twoLetterBigrams" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q4- Replace two letter character sequence</h2>
+            <p><a href="/q4_replaceCharSeq" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q5- Enter up to 5 words and print the total number of occurances of each word. <br> After that please remove those words</h2>
+            <p><a href="/q5_5wordTotalOccurences_remove" target="_blank">Click here!!!</a></p>
+        </section>
+    
+    
+    
+    
+    
+        <!-- <section>
+            <h2>Q1- Here goes the question!!!!</h2>
+            <p><a href="/thisWillRouteToTheApp_pyFile" target="_blank">Click here!!!</a></p>
+        </section> -->
+    
+        <!-- <form action="/onSubmission" method="post">
+            <input type="text" placeholder="Enter the Name to Search" name="nameUsedIn_Py">
+            <input type="submit" name="Submit">
+        </form> -->
+        <!-- 
+
+        {% if onSuccess %}
+            {{ onSuccess }}
+        {% endif %}
+
+        {% if onFailure %}
+            {{ onFailure }}
+        {% endif %}
+
+        {% if onSuccess %}
+            <h3>
+                    Total records:  {{ onSuccess }}
+            </h3>
+
+            {% if allRecords %}
+                <table>
+                    <tr>
+                        <th>Time</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Magnitude</th>
+                        <th>Place</th>
+                        <th>ID</th>
+                    </tr>
+                    {% for perEntry in allRecords %}
+                    <tr>
+                        <td>{{perEntry['time']}}</td>
+                        <td>{{perEntry['latitude']}}</td>
+                        <td>{{perEntry['longitude']}}</td>
+                        <td>{{perEntry['mag']}}</td>
+                        <td>{{perEntry['place']}}</td>
+                        <td>{{perEntry['id']}}</td>
+                        <td><img src="{{perEntry['picture']}}" alt="Not Found" width="80" height="80"></td>
+                        <td>{{perEntry['picture']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+    {% endif %}
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+
+    -->
+
+    </section>
+</body>
+</html>

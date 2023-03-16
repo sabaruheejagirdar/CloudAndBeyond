@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Q11</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+    <p><i>Single Word Search:</i> </p>
+
+    <form action="/on_q11_singleWordSearch" method="post">
+        <input type="text" placeholder="Enter the Text to be searched" name="enteredText">
+        <input type="submit" name="Submit"> <br>
+        project 
+        
+    </form>
+    <br>
+    {% if onFailure %}
+        <h2>{{onFailure}}</h2>
+    {% endif %}
+
+    {% if onSuccess %}
+       <h2>String Found</h2> 
+        <table>
+            <tr>
+                <th>
+                    File Name
+                </th>
+                <th>
+                    Line Number
+                </th>
+                <th>
+                    Total
+                </th>
+            </tr>
+            {% for key, value in onSuccess.items() %}
+            <tr>
+                <td> {{ key }} </td>
+                <td> {{ value[0] }} </td>
+                <td> {{ value[1] }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        
+    {% endif %}
+
+
+</body>
+</html>

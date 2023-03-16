@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br> 
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON --> 
+    {% if onSuccess %}
+        {{ onSuccess }}
+        {% if allRecords %}
+        <table>
+            <tr>
+                <th>Magnitude</th>
+                <th>Place</th>
+            </tr>
+            {% for perEntry in allRecords %}
+            <tr>
+                <td>{{perEntry['mag']}}</td>
+                <td>{{perEntry['place']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    {% endif %}  
+    
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %} 
+
+</body>
+</html>
+

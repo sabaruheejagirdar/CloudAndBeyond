@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+
+    <section>   
+        <form action="/imageUploaded" method="post">
+        <input type="text" placeholder="Upload profile picture" name="image">
+        <input type="submit" name="Submit">
+    </form>
+    </section>
+
+    {% if onSuccess %}
+        Total Records- {{ onSuccess }}
+
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Magnitude</th>
+                <th>Place</th>
+                <th>ID</th>
+                <th>Picture</th>
+            </tr>
+            {% for perEntry in allRecords %}
+            <tr>
+                <td>{{perEntry['time']}}</td>
+                <td>{{perEntry['magnitude']}}</td>
+                <td>{{perEntry['place']}}</td>
+                <td>{{perEntry['id']}}</td>
+                <td><img src="{{perEntry['picture']}}" alt="Not Found" width="80" height="80"></td>
+                <!-- <td>{{perEntry['picture']}}</td> -->
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+    
+</body>
+</html>

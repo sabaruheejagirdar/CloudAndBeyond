@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON -->  
+    <h3>
+        <!-- Query---> SELECT TOP (500) * FROM dbo.a3_earthQuakeData -->
+    </h3>
+    <form action="/on_q01_withoutRedisEachQuery" method="post">
+        <input type="text" placeholder="Start Range" name="startRange">
+        <input type="text" placeholder="End range" name="endRange">
+        <input type="text" placeholder="Value N" name="valueN">
+        <!-- <h3>Enter the number of times you want to repeat the query</h3> -->
+        <!-- <input type="text" placeholder="Enter the number here" name="count"> -->
+        <input type="submit" name="Submit">
+    </form> 
+    
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+
+    {% if onSuccess %}
+       <p>
+            <p>Execution of 1st Query: {{timeOfExecution[0]}}</p>
+            <p>Execution of 2nd Query: {{timeOfExecution[1]}}</p>
+            <p>Execution of 3rd Query: {{timeOfExecution[2]}}</p>
+            <p>Execution of 4th Query: {{timeOfExecution[3]}}</p>
+            <p>Execution of 5th Query: {{timeOfExecution[4]}}</p>
+            <h3>Total time of execution- {{totalTimeOfExecution}}</h3>
+       </p>
+       <h3>
+            <!-- Total records:  {{ onSuccess }} -->
+       </h3>
+    {% endif %}
+
+    <!--  -->
+
+    {% if outputQ01 %}
+    <table>
+        <tr>
+            <th>D</th>
+            <th>T</th>
+            <th>Name</th>
+        </tr>
+        {% for perEntry in outputQ01 %}
+        <tr>
+            <td>{{perEntry[0]}}</td>
+            <td>{{perEntry[1]}}</td>
+            <td>{{perEntry[2]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+</body>
+</html>
+

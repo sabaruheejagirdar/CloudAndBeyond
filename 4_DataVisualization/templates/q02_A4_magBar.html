@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON --> 
+
+    <div id="columnchart_values" style="width: 900px; height: 500px;"></div>
+    
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+    
+    {% if onSuccess %}
+    <script type="text/javascript">
+      google.charts.load("current", {packages:['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mag Range', 'Mag Value', { role: 'style' }, { role: 'annotation' } ],
+          ['Less Than 1',     {{a1}}, 'red', 'first' ],
+          ['Between 1-2',      {{a2}}, 'blue', 'second'],
+          ['Between 2-3',  {{a3}}, 'yellow', 'third'],
+          ['3 And Above', {{a4}}, 'orange', 'fourth'],
+        ]);
+  
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                         { calc: "stringify",
+                           sourceColumn: 1,
+                           type: "string",
+                           role: "annotation" },
+                         2]);
+  
+        var options = {
+          title: "Earthquake- Distribution based on magnitude",
+          width: 600,
+          height: 400,
+          hAxis: {
+            title: 'Magnitude Range',
+            titleTextStyle: {bold: true, fontSize: 20}
+          },
+          vAxis: {
+            title: 'Magnitude Value',
+            titleTextStyle: {bold: true, fontSize: 20}
+          },
+          bar: {groupWidth: "95%"},
+          legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+    }
+    </script>
+      <h3>
+        Bar Chart Succesfull
+      </h3>
+    {% endif %}
+
+</body>
+</html>
+

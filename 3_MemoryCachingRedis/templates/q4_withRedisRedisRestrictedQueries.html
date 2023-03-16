@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON -->  
+    <h3>
+        Query---> SELECT * FROM dbo.a3_earthQuakeData WHERE mag=2
+        <h1>
+            WITH REDIS
+        </h1>
+    </h3>
+    <form action="/on_q4_withRedisRedisRestrictedQueries" method="post">
+        <h3>Task2: To improve performance (time) to do queries, buffer/cache some previously made query
+            results in memory.(USE REDIS) </h3>
+        <input type="text" placeholder="Enter the number here" name="redisCount">
+        <input type="submit" name="Submit">
+    </form> 
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+    
+    {% if onSuccess %}
+       <h3>
+            Time taken to execute the queries: {{ timeOfExecution }}
+       </h3>
+       <h3>
+            <!-- Total records:  {{ onSuccess }} -->
+       </h3>
+    {% endif %}
+
+    {% if outputQ4 %}
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Place</th>
+            <th>ID</th>
+            <th>Mag</th>
+        </tr>
+        {% for perEntry in outputQ4 %}
+        <tr>
+            <td>{{perEntry['time']}}</td>
+            <td>{{perEntry['place']}}</td>
+            <td>{{perEntry['id']}}</td>
+            <td>{{perEntry['mag']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p> Count from Redis: {{ countFromRedis }}</p>
+    {% endif %}
+    
+</body>
+</html>
+

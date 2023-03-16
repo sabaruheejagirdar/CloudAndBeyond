@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON --> 
+    <form action="/on_q23_A4_pie" method="post">
+        <input type="text" placeholder="Start Range" name="startRange">
+        <input type="text" placeholder="End Range" name="endRange">
+        <input type="submit" name="Submit">
+    </form>
+    <br>
+
+    
+    <br>
+
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %}
+    
+    {% if onSuccess %}
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+          var data = google.visualization.arrayToDataTable([
+            ['Range', 'Value'],
+            {% for perRow in a1 %}
+            [ '{{ perRow[0] }}', {{ perRow[1]}}],
+            {% endfor %}
+            
+          ]);
+
+          var options = {
+            title: ' Range',
+            // is3D: true,
+            pieSliceText: 'value-and-percentage'
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+          chart.draw(data, options);
+        }
+      </script>
+       <h3>
+            Pie Chart Succesfull
+       </h3>
+    {% endif %}
+
+</body>
+</html>
+

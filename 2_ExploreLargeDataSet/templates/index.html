@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project-02</title>
+</head>
+<body class="homePage">
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+    
+    <section>
+    
+        <h1>Quiz-01</h1>
+    
+        <section>
+            <h2>Q0- Display all records</h2>
+            <p><a href="/displayAllRecords" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q1- Largest 5 earthquakes</h2>
+            <p><a href="/largestQuakes" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q2- Earthquakes that happened within 500KM of Arlington, Texas</h2>
+            <p><a href="/withinArlington" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q5- Where did largest quake occur within 200 km of Dallas?</h2>
+            <p><a href="/dallasLargest" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q3- For the date range January 20 through 26 (or variable..) how many quakes
+                greater than 3 on Richter scale</h2>
+            <p><a href="/greaterThanRicherScale" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q4- In most recent 3 days, how many quakes (Richter scale): 1 to 2, 2 to 3, 3 to 4, up to 7?</h2>
+            <p><a href="/recentQuakes" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <section>
+            <h2>Q6- Are quakes more common within 1000 km of Anchorage (61 N, 150 W) than
+                Dallas (32.8 N, 96.8 W)?</h2>
+            <p><a href="/commonQuakes" target="_blank">Click here!!!</a></p>
+        </section>
+
+            <section>
+                <h2>Q7- 11.Do large (>4.0 mag) occur more often at night??</h2>
+                <p><a href="/nightQuakes" target="_blank">Click here!!!</a></p>
+            </section>
+
+        <section>
+            <h2>Q8- Find clusters of earthquakes</h2>
+            <p><a href="/clusterQuakes" target="_blank">Click here!!!</a></p>
+        </section>
+
+        <!-- <section>
+            <h2>Q1- Display all records</h2>
+            <p><a href="/displayAllRecords" target="_blank">Click here!!!</a></p>
+        </section> -->
+    
+    
+    
+    
+    
+        <!-- <section>
+            <h2>Q1- Here goes the question!!!!</h2>
+            <p><a href="/thisWillRouteToTheApp_pyFile" target="_blank">Click here!!!</a></p>
+        </section> -->
+    
+        <!-- <form action="/onSubmission" method="post">
+            <input type="text" placeholder="Enter the Name to Search" name="nameUsedIn_Py">
+            <input type="submit" name="Submit">
+        </form> -->
+        <!-- 
+
+        {% if onSuccess %}
+            {{ onSuccess }}
+        {% endif %}
+
+        {% if onFailure %}
+            {{ onFailure }}
+        {% endif %}
+
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Magnitude</th>
+                <th>Place</th>
+                <th>ID</th>
+                <th>Picture</th>
+            </tr>
+            {% for perEntry in allRecords %}
+            <tr>
+                <td>{{perEntry['time']}}</td>
+                <td>{{perEntry['magnitude']}}</td>
+                <td>{{perEntry['place']}}</td>
+                <td>{{perEntry['id']}}</td>
+                <td><img src="{{perEntry['picture']}}" alt="Not Found" width="80" height="80"></td>
+                <td>{{perEntry['picture']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+    -->
+
+    </section>
+</body>
+</html>

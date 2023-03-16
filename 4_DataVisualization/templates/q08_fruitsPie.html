@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON --> 
+    <form action="/on_q08_fruitsPie" method="post">
+        <input type="text" placeholder="Enter the number of slices" name="nSlices">
+        <input type="text" placeholder="Enter the fruits" name="nFruits">
+        <input type="submit" name="Submit">
+    </form>
+    <br>
+
+    
+    <br>
+
+    <div id="piechart" style="width: 1100px; height: 600px;"></div>
+
+    {% if onSuccess %}
+    {{ a1 }}
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+  
+        function drawChart() {
+  
+          var data = google.visualization.arrayToDataTable([
+          ['Fruits', 'Value'],
+          {% for key, value in a1.items() %}
+            {% if value is string %}
+                [ '{{ key }}', '{{ value }}'],
+            {% else %}
+                ['{{ key }}', {{ value }}],
+            {% endif %}
+          {% endfor %}
+        ]);
+  
+          var options = {
+            title: 'Fruits Range',
+            pieSliceText: 'value-and-percentage'
+          };
+  
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  
+          chart.draw(data, options);
+        }
+      </script>
+
+    {% endif %}
+</body>
+</html>

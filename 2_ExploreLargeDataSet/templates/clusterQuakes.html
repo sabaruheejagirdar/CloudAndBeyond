@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+    </section>
+    <!-- COMMON --> 
+    
+        
+    {% if onSuccess %}
+        <h3>
+            {{ onSuccess }}
+        </h3>
+    <h2>Cluster 1:</h2>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Magnitude</th>
+            <th>Place</th>
+            <th>ID</th>
+        </tr>
+        {% for perEntry in cluster1 %}
+        <tr>
+            <td>{{perEntry['time']}}</td>
+            <td>{{perEntry['mag']}}</td>
+            <td>{{perEntry['place']}}</td>
+            <td>{{perEntry['id']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Cluster 2:</h2>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Magnitude</th>
+            <th>Place</th>
+            <th>ID</th>
+        </tr>
+        {% for perEntry in cluster2 %}
+        <tr>
+            <td>{{perEntry['time']}}</td>
+            <td>{{perEntry['mag']}}</td>
+            <td>{{perEntry['place']}}</td>
+            <td>{{perEntry['id']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Cluster 3:</h2>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Magnitude</th>
+            <th>Place</th>
+            <th>ID</th>
+        </tr>
+        {% for perEntry in cluster3 %}
+        <tr>
+            <td>{{perEntry['time']}}</td>
+            <td>{{perEntry['mag']}}</td>
+            <td>{{perEntry['place']}}</td>
+            <td>{{perEntry['id']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+{% if onFailure %}
+    {{ onFailure }}
+{% endif %} 
+</body>
+</html>
+

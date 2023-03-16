@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Q5- 5WordTotalOcc</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+    <!-- COMMON -->
+
+    <p><i>Enter up to 5 words and print the total number of occurances of each word.</i></p>
+
+    <form action="/on_q5_5wordTotalOccurences_remove" method="post">
+        <input type="text" placeholder="Enter word1" name="word1">
+        <input type="text" placeholder="Enter word2" name="word2">
+        <input type="text" placeholder="Enter word3" name="word3">
+        <input type="text" placeholder="Enter word4" name="word4">
+        <input type="text" placeholder="Enter word5" name="word5">
+        <input type="submit" name="Submit"> <br>
+    </form>
+    
+
+    {% if onSuccess %}
+        <h2>{{onSuccess}}</h2>
+        <table>
+            <tr>
+                <th>
+                    Words
+                </th>
+                <th>
+                    WordCount
+                </th>
+            </tr>
+            {% for key, value in finalDict.items() %}
+            <tr>
+                <td> {{ key }} </td>
+                <td> {{ value }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+
+</body>
+</html>

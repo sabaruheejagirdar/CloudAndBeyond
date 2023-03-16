@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css')}}">
+    <title>Project</title>
+</head>
+<body>
+    <section class="myName">
+        <p>
+            Saba Ruhee Jagirdar <br> 48512 <br/> <i>QUIZ 01</i> Project <br/>
+            <img src="static/b.jpg" width="150" height="150">
+        </p>  
+        <a href="/" target="_self">~~~HOMEPAGE~~~</a>
+        <br/>
+    </section>
+
+    <section>   
+        <form action="/arlingtonEarthquakes" method="post">
+        <input type="text" placeholder="Enter Latitue" name="latitude" value="32.7324106">
+        <input type="text" placeholder="Enter Longitude" name="longitude" value="-97.1126678">
+        <input type="text" placeholder="Enter Radius in KM" name="radius">
+        <input type="submit" name="Submit">
+    </form>
+    </section>
+
+    <!-- COMMON -->
+
+    {% if onSuccess %}
+    {% if allRecords %}
+    <table>
+        <tr>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Distance</th>
+            <th>Type</th>
+        </tr>
+        {% for perEntry in allRecords %}
+        <tr>
+            <td>{{perEntry['latitude']}}</td>
+            <td>{{perEntry['longitude']}}</td>
+            <td>{{perEntry['distance']}}</td>
+            <td>{{perEntry['type']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    {% endif %}
+
+    {% if onFailure %}
+        {{ onFailure }}
+    {% endif %} 
+    </body>
+</html>
